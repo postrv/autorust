@@ -31,8 +31,17 @@ impl Agent for GPTVisionAgent {
             }
         }
     }
-    fn send_message(&mut self, _recipient_id: &str, _content: Value) {
-        todo!()
+    fn send_message(&mut self, recipient_id: &str, content: Value) {
+        // Construct the message
+        let message = Message {
+            sender_id: self.id.clone(),
+            recipient_id: recipient_id.to_string(),
+            content,
+        };
+
+        // Enqueue the message in the recipient's message queue
+        // This requires access to the AgentManager, which can be implemented as a global
+        // or passed as a context to each agent
     }
 
     fn analyze_image(&self, _image_data: &Value) -> Value {

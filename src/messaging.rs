@@ -6,7 +6,7 @@ use std::collections::VecDeque;
 /// Represents a message to be processed by an agent.
 pub struct Message {
     pub(crate) sender_id: String,
-    recipient_id: String,
+    pub(crate) recipient_id: String,
     pub(crate) content: Value,  // JSON content
 }
 

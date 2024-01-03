@@ -8,7 +8,7 @@ use crate::agent_registry::{AgentRegistry, AgentInfo};
 use crate::messaging::Message;
 
 /// Represents the state and functionality of an agent.
-pub trait Agent {
+pub trait Agent: Send {
     fn process_message(&mut self, message: &Message);
     fn send_message(&mut self, recipient_id: &str, content: Value);
     // Additional methods can be added here
