@@ -4,6 +4,7 @@
 
 use serde_json::Value;
 use crate::agent_manager::Agent;
+use async_trait::async_trait;
 
 
 use crate::messaging::{Message, MessageQueue};
@@ -43,8 +44,13 @@ impl CodingAgent {
         serde_json::json!({"code": "Generated code based on specs"})
     }
 }
-
+#[async_trait]
 impl Agent for CodingAgent {
+    async fn analyze_image(&self, _image_data: &[u8]) -> Result<Value, reqwest::Error> {
+        // No operation or default implementation
+        Ok(Value::Null)
+    }
+
     fn process_message(&mut self, _message: &Message) {
         // Logic to process the message
     }
@@ -53,7 +59,7 @@ impl Agent for CodingAgent {
         // Logic to send a message
     }
 
-    fn analyze_image(&self, _image_data: &Value) -> Value {
+    fn enqueue_message(&mut self, _message: Message) {
         todo!()
     }
 
