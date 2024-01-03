@@ -15,7 +15,7 @@ Per the diagram below, AutoGen will consist of
 6. API Integration
 7. Async Task Management
 
-![diagram.png](..%2F..%2FDesktop%2Fdiagram.png)
+![AutoGen Architecture](./async-advanced.png)
 
 ### Core Module
 The primary application logic lives here.
@@ -26,8 +26,8 @@ This is where the protocols and routines allowing LLM's to communicate with one 
 ### Error Handling and Logging
 Since LLM's especially remote ones such as OpenAI are prone to network errors, special attention must be paid to fault tolerance
 
-### Testing Module
-This is where the unit tests live.
+### Testing Module (WIP)
+This is where the unit tests will live.
 
 ### API Integration
 This is where the API's for the various LLM's will be integrated.
@@ -37,5 +37,8 @@ This is where the async tasks will be managed.
 
 ### Advantages
 - Agent-based parallelism: optimise the threading across agents based on which agent is doing more work at any given time
-- Adversarial collaboration - one agent builds, one constructively checks the work, the third critiques it
-- 
+- Adversarial collaboration:
+  - one agent creates specs,
+  - another builds code
+  - another runs it
+  - the final one propagates feedback to the second agent for further iteration
