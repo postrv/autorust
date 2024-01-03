@@ -66,16 +66,8 @@ To set up and run Autorust, follow these steps:
   cargo test
   ```
 
-## Contribution
-
-- Contributions are welcome. Please submit pull requests with any enhancements or bug fixes.
-
-## License
-
-- Autorust is released under [MIT License](LICENSE).
 
 ---
-
 
 ### Additional Notes
 - Agent-based parallelism: optimise the threading across agents based on which agent is doing more work at any given time
