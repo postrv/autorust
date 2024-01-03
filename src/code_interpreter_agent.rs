@@ -4,7 +4,7 @@
 
 use serde_json::Value;
 use crate::agent_manager::Agent;
-
+use async_trait::async_trait;
 
 use crate::messaging::{Message, MessageQueue};
 
@@ -43,8 +43,13 @@ impl CodeInterpreterAgent {
         serde_json::json!({"result": "Execution result of the code"})
     }
 }
-
+#[async_trait]
 impl Agent for CodeInterpreterAgent {
+    async fn analyze_image(&self, _image_data: &[u8]) -> Result<Value, reqwest::Error> {
+        // No operation or default implementation
+        Ok(Value::Null)
+    }
+
     fn process_message(&mut self, _message: &Message) {
         // Logic to process the message
     }
@@ -53,7 +58,7 @@ impl Agent for CodeInterpreterAgent {
         // Logic to send a message
     }
 
-    fn analyze_image(&self, _image_data: &Value) -> Value {
+    fn enqueue_message(&mut self, _message: Message) {
         todo!()
     }
 
