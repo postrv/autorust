@@ -1,14 +1,10 @@
 // code_checker_agent.rs
 
-
-
-use serde_json::Value;
 use crate::agent_manager::Agent;
 use async_trait::async_trait;
-
+use serde_json::Value;
 
 use crate::messaging::{Message, MessageQueue};
-
 
 struct CodeCheckerAgent {
     id: String,
@@ -33,7 +29,7 @@ impl CodeCheckerAgent {
                 if let Some(feedback) = validation_result {
                     self.send_feedback(feedback);
                 }
-            },
+            }
             _ => {
                 // Handle other message types or ignore
             }
@@ -44,7 +40,7 @@ impl CodeCheckerAgent {
         // Logic to validate the output of the executed code
         // This could involve checking the output against expected results
         // Return feedback if adjustments are needed
-        None  // Placeholder for validation logic
+        None // Placeholder for validation logic
     }
 
     fn send_feedback(&self, _feedback: Value) {

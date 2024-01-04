@@ -1,11 +1,9 @@
 // gpt_vision_agent.rs
 
-
-use serde_json::Value;
-use crate::AGENT_MANAGER;
 use crate::agent_manager::Agent;
-use crate::messaging::{MessageQueue, Message};
-
+use crate::messaging::{Message, MessageQueue};
+use crate::AGENT_MANAGER;
+use serde_json::Value;
 
 struct GPTVisionAgent {
     id: String,
@@ -37,18 +35,18 @@ impl GPTVisionAgent {
                                 match GPTVisionAgent::analyze_image(&self_id, &image_data).await {
                                     Ok(_specs) => {
                                         // Send the message using a new instance or a shared state
-                                    },
+                                    }
                                     Err(e) => eprintln!("Error analyzing image: {}", e),
                                 }
                             });
-                        },
+                        }
                         Err(e) => eprintln!("Error decoding base64 image: {}", e),
                     }
                 }
-            },
+            }
             Some("text") => {
                 // Handle text data
-            },
+            }
             _ => {
                 // Handle other message types or ignore
             }
@@ -57,7 +55,8 @@ impl GPTVisionAgent {
 
     async fn analyze_image(_agent_id: &str, image_data: &[u8]) -> Result<Value, reqwest::Error> {
         let client = reqwest::Client::new();
-        let response = client.post("https://api.openai.com/v1/chat/completions")
+        let response = client
+            .post("https://api.openai.com/v1/chat/completions")
             .header("Authorization", format!("Bearer {}", "chat_gpt_api_token"))
             .body(image_data.to_owned())
             .send()
@@ -82,10 +81,8 @@ impl GPTVisionAgent {
         manager.enqueue_message(recipient_id.to_string(), message);
     }
 
-
     fn enqueue_message(&mut self, _message: Message) {
         todo!()
     }
     // Other methods specific to GPT Vision Agent
 }
-

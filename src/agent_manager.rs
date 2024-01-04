@@ -1,11 +1,11 @@
 // agent_manager.rs
 
-use std::collections::HashMap;
 use async_trait::async_trait;
+use std::collections::HashMap;
 
 use serde_json::Value;
 
-use crate::agent_registry::{AgentRegistry, AgentInfo};
+use crate::agent_registry::{AgentInfo, AgentRegistry};
 use crate::messaging::Message;
 
 /// Represents the state and functionality of an agent.
@@ -56,4 +56,3 @@ impl AgentManager {
         }
     }
 }
-

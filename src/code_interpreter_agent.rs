@@ -1,13 +1,10 @@
 // code_interpreter_agent.rs
 
-
-
-use serde_json::Value;
 use crate::agent_manager::Agent;
 use async_trait::async_trait;
+use serde_json::Value;
 
 use crate::messaging::{Message, MessageQueue};
-
 
 struct CodeInterpreterAgent {
     id: String,
@@ -30,7 +27,7 @@ impl CodeInterpreterAgent {
                 let code = &message.content["code"];
                 let execution_result = self.execute_code(code);
                 self.send_message(&message.sender_id, execution_result);
-            },
+            }
             _ => {
                 // Handle other message types or ignore
             }

@@ -7,7 +7,7 @@ use std::collections::VecDeque;
 pub struct Message {
     pub(crate) sender_id: String,
     pub(crate) recipient_id: String,
-    pub(crate) content: Value,  // JSON content
+    pub(crate) content: Value, // JSON content
 }
 
 /// A queue for storing and managing messages for an agent.
@@ -32,4 +32,3 @@ impl MessageQueue {
 
     // Additional methods can be added as needed
 }
-

@@ -1,14 +1,10 @@
 // coding_agent.rs
 
-
-
-use serde_json::Value;
 use crate::agent_manager::Agent;
 use async_trait::async_trait;
-
+use serde_json::Value;
 
 use crate::messaging::{Message, MessageQueue};
-
 
 struct CodingAgent {
     id: String,
@@ -31,7 +27,7 @@ impl CodingAgent {
                 let specs = &message.content["specs"];
                 let code = self.generate_code(specs);
                 self.send_message(&message.sender_id, code);
-            },
+            }
             _ => {
                 // Handle other message types or ignore
             }

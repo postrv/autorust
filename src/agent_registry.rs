@@ -1,7 +1,7 @@
 // agent_registry.rs
 
+use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use serde::{Serialize, Deserialize};
 
 /// Represents the information of an agent.
 #[derive(Serialize, Deserialize, Debug, Clone)]
