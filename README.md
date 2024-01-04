@@ -1,8 +1,8 @@
-# # Autorust - AI Agent Communication implementation in Rust
+# # Autorust - AI Agent Communication implementation in Rust - MVP Purposes
 
 ## Introduction
 
-This is a Rust implementation of the [AI Agent Communication](https://github.com/microsoft/autogen) known as AutoGen developed by Microsoft.
+This is an MVP for a proposed Rust implementation of the [AI Agent Communication](https://github.com/microsoft/autogen) known as AutoGen developed by Microsoft.
 
 The architecture of the system is shown below:
 
