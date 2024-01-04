@@ -57,8 +57,8 @@ impl GPTVisionAgent {
 
     async fn analyze_image(_agent_id: &str, image_data: &[u8]) -> Result<Value, reqwest::Error> {
         let client = reqwest::Client::new();
-        let response = client.post("https://api.openai.com/v1/images:generate")
-            .header("Authorization", format!("Bearer {}", "your_api_token"))
+        let response = client.post("https://api.openai.com/v1/chat/completions")
+            .header("Authorization", format!("Bearer {}", "chat_gpt_api_token"))
             .body(image_data.to_owned())
             .send()
             .await?;
