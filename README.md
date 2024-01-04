@@ -85,6 +85,7 @@ To set up and run Autorust, follow these steps:
 skinparam backgroundColor #EEF2F7
 skinparam shadowing false
 skinparam ArrowColor #555555
+skinparam ArrowThickness 2
 skinparam ArrowFontColor #555555
 skinparam ArrowFontSize 10
 skinparam ArrowFontStyle bold
@@ -145,6 +146,7 @@ package "Asynchronous Approach - Detailed" {
 skinparam backgroundColor #EEF2F7
 skinparam shadowing false
 skinparam ArrowColor #555555
+skinparam ArrowThickness 2
 skinparam ArrowFontColor #555555
 skinparam ArrowFontSize 10
 skinparam ArrowFontStyle bold
@@ -179,6 +181,7 @@ package "Asynchronous Approach" {
 skinparam backgroundColor #EEF2F7
 skinparam shadowing false
 skinparam ArrowColor #555555
+skinparam ArrowThickness 2
 skinparam ArrowFontColor #555555
 skinparam ArrowFontSize 10
 skinparam ArrowFontStyle bold
